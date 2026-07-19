@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RS Yazılım</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Arial,sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(rgba(10,20,40,.92),rgba(5,10,20,.92)),
+url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80");
+
+background-size:cover;
+background-position:center;
+height:100vh;
+color:white;
+overflow:hidden;
+
+}
+
+.center{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+
+}
+
+.center h1{
+
+font-size:45px;
+margin-bottom:20px;
+
+}
+
+.center h2{
+
+color:#4da6ff;
+margin-bottom:25px;
+
+}
+
+.btn{
+
+padding:15px 40px;
+border:none;
+background:#1f6fff;
+color:white;
+font-size:20px;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#0d4db3;
+
+}
+
+#panel{
+
+display:none;
+height:100vh;
+
+}
+
+.sidebar{
+
+position:fixed;
+left:0;
+top:0;
+width:250px;
+height:100%;
+background:#111827;
+padding-top:30px;
+
+}
+
+.logo{
+
+font-size:28px;
+text-align:center;
+margin-bottom:40px;
+color:#4da6ff;
+
+}
+
+.menu button{
+
+display:block;
+width:90%;
+margin:10px auto;
+padding:15px;
+background:#1f2937;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:17px;
+
+}
+
+.menu button:hover{
+
+background:#2563eb;
+
+}
+
+.content{
+
+margin-left:260px;
+padding:40px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+
+}
+
+input{
+
+width:100%;
+padding:13px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+font-size:16px;
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+h3{
+
+margin-bottom:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="center" id="welcome">
+
+<h1>RS YAZILIM</h1>
+
+<h2>2 Şubat 2026 plan olarak süreç başlatılmıştır.</h2>
+
+<h3>Sahibi: Yağız Çevik</h3>
+
+<p style="margin-top:15px;font-size:20px;color:red;">
+Sistem Kullanılamaz
+</p>
+
+<br>
+
+<button class="btn" onclick="startSite()">TAMAM</button>
+
+</div>
+
+<div id="panel">
+
+<div class="sidebar">
+
+<div class="logo">
+
+RS Yazılım
+
+</div>
+
+<div class="menu">
+
+<button onclick="plans()">📂 Planlar</button>
+
+<button onclick="market()">🛒 Pazar</button>
+
+<button onclick="register()">🏢 Şirket Kayıt</button>
+
+<button onclick="coming()">📊 Finans</button>
+
+<button onclick="coming()">🤖 Yapay Zeka</button>
+
+<button onclick="coming()">⚙ Projeler</button>
+
+<button onclick="coming()">📡 Ağ Sistemleri</button>
+
+<button onclick="coming()">💻 Yazılım</button>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="card" id="content">
+
+<h2>RS Yazılım Paneline Hoş Geldiniz</h2>
+
+<p>Soldaki menüden seçim yapabilirsiniz.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function startSite(){
+
+document.getElementById("welcome").style.display="none";
+document.getElementById("panel").style.display="block";
+
+}
+
+function plans(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>Planlar</h2>
+
+<br>
+
+<ul style="font-size:20px;line-height:45px;">
+
+<li>🦾 Ironman Zırhı</li>
+
+<li>⚡ Yenilebilir Enerji</li>
+
+<li>🚀 Dahası Gelecek...</li>
+
+</ul>
+
+`;
+
+}
+
+function market(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>Pazar</h2>
+
+<br>
+
+<h3>Al / Sat Bölümü</h3>
+
+<p style="font-size:22px;color:orange;">COMING SOON</p>
+
+`;
+
+}
+
+function coming(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>COMING SOON</h2>
+
+`;
+
+}
+
+function register(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>Şirket Kayıt</h2>
+
+<br>
+
+<input type="email" placeholder="Gmail">
+
+<input type="password" placeholder="Şifre">
+
+<input type="tel" placeholder="Telefon Numarası">
+
+<button class="btn" onclick="finishRegister()">Kayıt Ol</button>
+
+`;
+
+}
+
+function finishRegister(){
+
+document.getElementById("content").innerHTML=`
+
+<h2>Kayıt Başarılı</h2>
+
+<br>
+
+<p style="font-size:22px;color:#4dff88;">
+
+Lütfen Gmail'inizi kontrol edin en yakın zamanda size ulaşacağız
+
+</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
